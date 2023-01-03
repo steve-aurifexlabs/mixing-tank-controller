@@ -83,7 +83,7 @@ def main(args):
     pprint(rtos.event_routes)
 
     # Start event loop
-    asyncio.run(rtos.start_event_loop())
+    rtos.start_event_loop()
 
 
 if __name__ == '__main__':
