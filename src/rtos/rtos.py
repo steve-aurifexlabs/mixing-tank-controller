@@ -56,18 +56,21 @@ def start_event_loop():
         if not module.is_timer:
             asyncio.run(module.start_task())
 
-    while True:
-        # startTickTime = loop.time()
+    async def start_scheduler():
+        while True:
+            # startTickTime = loop.time()
 
-        # tickStats.add({})
+            # tickStats.add({})
 
-        for timer in timers:
-            timer.tick()
+            for timer in timers:
+                timer.tick()
 
-        # tickStats[-1].cpuTime = loop.time() - startTickTime
+            # tickStats[-1].cpuTime = loop.time() - startTickTime
 
-        # gc.collect(0)
+            # gc.collect(0)
 
-        # tickStats[-1].gcTime = loop.time() - startTickTime - tickStats.cpuTime
-        
-        await asyncio.sleep(1)
+            # tickStats[-1].gcTime = loop.time() - startTickTime - tickStats.cpuTime
+            
+            await asyncio.sleep(1)
+    
+    asyncio.run(start_scheduler())
