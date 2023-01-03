@@ -29,6 +29,9 @@
         "chip": "2",
         "line": 9
     },
+    "sensors": {
+        "cpu_temperature": {}
+    },
     "buttons": {
         "fan": {
             "pin": 18,
