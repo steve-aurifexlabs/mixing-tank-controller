@@ -20,8 +20,6 @@ class Button(EmbeddedModule):
 
         self.value = self.devices["button"]["read"]()
         
-        self.loop.create_task(self.send({
-            'value': self.value,
-        }))
+        self.loop.create_task(self.send(self.value))
         
         self.is_idle = True
