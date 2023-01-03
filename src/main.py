@@ -33,7 +33,7 @@ def main(args):
         'temperature': devices['temperature_sensor'],
     }))
 
-    rtos.register_module('fan_button', Button(config["buttons"]["fan_button"], {
+    rtos.register_module('fan_button', Button(config["buttons"]["fan"], {
         'button': devices['fan_button'],
     }))
 
