@@ -73,13 +73,13 @@ def main(args):
     # Init modules
     rtos.init_modules()
 
-    print("Modules:")
+    print("\nModules:")
     pprint(rtos.modules)
-    print("Devices:")
+    print("\nDevices:")
     pprint(devices)
-    print("Timers:")
+    print("\nTimers:")
     pprint(rtos.timers)
-    print("Event Routes:")
+    print("\nEvent Routes:")
     pprint(rtos.event_routes)
 
     # Start event loop
