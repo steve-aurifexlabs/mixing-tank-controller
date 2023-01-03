@@ -24,4 +24,4 @@ class Timer(EmbeddedModule):
         print(self.loop.time(), self.time, self.interval)
         if(self.loop.time() - self.time > self.interval):
             self.time = self.loop.time()
-            await self.send({})
+            self.loop.create_task(self.send({}))

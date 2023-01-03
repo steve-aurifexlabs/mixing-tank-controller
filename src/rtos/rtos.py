@@ -49,14 +49,14 @@ def init_modules():
     for module in modules.values():
         module.init_module()
 
-def start_event_loop():
-    # loop = asyncio.get_running_loop()
+async def start_event_loop():
+    loop = asyncio.get_running_loop()
 
     for module in modules.values():
         if not module.is_timer:
-            asyncio.run(module.start_task())
+            loop.create_task(module.start_task())
 
-    async def start_scheduler():
+    def start_scheduler():
         print('\n---Start Scheduler---\n')
 
         while True:
@@ -66,7 +66,7 @@ def start_event_loop():
 
             for timer in timers:
                 print(timer)
-                timer.tick()
+                await timer.tick()
 
             # tickStats[-1].cpuTime = loop.time() - startTickTime
 
@@ -76,4 +76,4 @@ def start_event_loop():
             
             await asyncio.sleep(1)
     
-    asyncio.run(start_scheduler)
+    start_scheduler()
