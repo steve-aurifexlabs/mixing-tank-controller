@@ -1,0 +1,68 @@
+{
+    "fan_control": {
+        "FAN_TEMP": 70,
+        "FAN_START_TIME": 5,
+        "FAN_STOP_TIME": 5,
+        "fan": {}
+    },
+    "warning_system": {
+        "WARNING_TEMP": 80
+    },
+    "alarm_system": {
+        "ALARM_TEMP": 90
+    },
+
+    "timers": {
+        "slow": {
+            "period": 1000,
+            "unit": "ms"
+        },
+        "fast": {
+            "period": 10,
+            "unit": "ms"
+        }
+    },
+
+    "fan": {
+        "pin": 16, 
+        "pin_name": "GPIO_P16",
+        "chip": "2",
+        "line": 9
+    },
+    "buttons": {
+        "fan": {
+            "pin": 18,
+            "pin_name": "GPIO_P18",
+            "chip": "4",
+            "line": 10
+        },
+        "alarm_reset": {
+            "board_pin": 0,
+            "chip": "",
+            "line": 1
+        }
+    },
+    "leds": {
+        "warning": {
+            "pin": 22,
+            "pin_name": "GPIO_P22",
+            "chip": "4",
+            "line": 12
+        },
+        "alarm_0": {
+            "board_pin": 0,
+            "chip": "",
+            "line": 1
+        },
+        "alarm_1": {
+            "board_pin": 0,
+            "chip": "",
+            "line": 1
+        }
+    },
+
+    "endpoints": {
+        "log": "https://aurifexlabs.com/embedded/mixer/api/log",
+        "alarm": "https://aurifexlabs.com/embedded/mixer/api/alarm"
+    }
+}
