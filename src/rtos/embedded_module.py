@@ -1,6 +1,7 @@
 '''Base Embedded Module'''
 
 
+from pprint import pprint
 import asyncio
 
 
@@ -23,6 +24,8 @@ class EmbeddedModule(object):
         while True:
             event = await self.queue.get()
             
+            pprint('Event: ', event)
+
             # Module properties get automatically set with event data
             try:
                 self[self.event_attribute_map[event["event_name"]]] = event["value"]
