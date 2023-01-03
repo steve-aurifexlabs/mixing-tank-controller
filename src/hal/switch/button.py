@@ -1,6 +1,7 @@
 '''Button module'''
 
 
+import asyncio
 from rtos.embedded_module import EmbeddedModule
 
 
@@ -13,11 +14,14 @@ class Button(EmbeddedModule):
         super().init_module()
         self.value = self.devices["button"]["read"]()
 
-    def step(self):
+    async def step(self):
+        if not self.loop:
+            self.loop = asyncio.get_running_loop()
+
         self.value = self.devices["button"]["read"]()
         
-        self.send({
+        self.loop.create_task(self.send({
             'value': self.value,
-        })
+        }))
         
         self.is_idle = True

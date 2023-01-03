@@ -1,6 +1,7 @@
 '''Temperature sensor module'''
 
 
+import asyncio
 from rtos.embedded_module import EmbeddedModule
 
 
@@ -13,11 +14,14 @@ class TemperatureSensor(EmbeddedModule):
         super().init_module()
         self.temperature = self.devices["temperature"]["read"]()
 
-    def step(self):
+    async def step(self):
+        if not self.loop:
+            self.loop = asyncio.get_running_loop()
+
         self.temperature = self.devices["temperature"]["read"]()
         
-        self.send({
+        self.loop.create_task(self.send({
             'temperature': self.temperature,
-        })
+        }))
         
         self.is_idle = True
