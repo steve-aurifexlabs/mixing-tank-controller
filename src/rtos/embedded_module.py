@@ -35,7 +35,6 @@ class EmbeddedModule(object):
 
             self.is_idle = False
             while not self.is_idle:
-                print('no step? ', self.step)
                 await self.step()
 
             self.queue.task_done()
