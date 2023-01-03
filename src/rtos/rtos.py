@@ -53,7 +53,7 @@ def init_modules():
 async def start_event_loop():
     loop = asyncio.get_running_loop()
 
-    for module in modules:
+    for module in modules.values():
         if not module.is_timer:
             module.start_task()
 
