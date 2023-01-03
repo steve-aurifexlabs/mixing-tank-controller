@@ -7,7 +7,7 @@ import gc
 from rtos.ring_buffer import RingBuffer
 
 
-modules = []
+modules = {}
 timers = []
 devices = {}
 event_routes = {}
@@ -40,13 +40,13 @@ def register_module(module_name, module):
     module.subscribe = subscribe
     module.send = send
     
-    modules.append(module)
+    modules[module.name] = module
 
     if module.is_timer:
         timers.append(module)
 
 def init_modules():
-    for module in modules:
+    for module in modules.values():
         module.init_module()
 
 async def start_event_loop():
