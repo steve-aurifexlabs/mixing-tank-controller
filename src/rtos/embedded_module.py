@@ -25,7 +25,7 @@ class EmbeddedModule(object):
         while True:
             event = await self.queue.get()
             
-            pprint('Event: ', json.dumps(event))
+            print('Event: ', json.dumps(event))
 
             # Module properties get automatically set with event data
             try:
