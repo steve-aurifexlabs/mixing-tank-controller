@@ -2,6 +2,7 @@
 
 
 from pprint import pprint
+import asyncio
 
 from rtos.embedded_module import EmbeddedModule
 from hal.actuator.fan import Fan
@@ -37,8 +38,10 @@ class FanControl(EmbeddedModule):
         self.temperature = -1000
         self.button_pressed = False
 
-    def step(self):
-        pprint(self)
+    async def step(self):
+        if not self.loop:
+            self.loop = asyncio.get_running_loop()
+
         def fan_off():
             self.fan.off()
             if self.button_pressed or (self.temperature >= self.config["FAN_TEMP"]):
