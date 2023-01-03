@@ -66,7 +66,7 @@ async def start_event_loop():
 
         # tickStats[-1].cpuTime = loop.time() - startTickTime
 
-        gc.collect(0)
+        # gc.collect(0)
 
         # tickStats[-1].gcTime = loop.time() - startTickTime - tickStats.cpuTime
         
