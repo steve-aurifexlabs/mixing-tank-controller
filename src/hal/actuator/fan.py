@@ -8,7 +8,7 @@ class Fan(object):
         pass
 
     def off(self):
-        self.devices["fan"].write(False)
+        self.devices["fan"]["write"](False)
 
     def on(self):
-        self.devices["fan"].write(True)
+        self.devices["fan"]["write"](True)
