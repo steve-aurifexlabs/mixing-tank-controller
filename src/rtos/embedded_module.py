@@ -29,7 +29,7 @@ class EmbeddedModule(object):
 
             # Module properties get automatically set with event data
             try:
-                self[self.event_attribute_map[event["event_name"]]] = event["value"]
+                self.__dict__[self.event_attribute_map[event["event_name"]]] = event["value"]
             except:
                 pass
 
