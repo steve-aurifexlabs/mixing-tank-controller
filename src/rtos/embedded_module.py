@@ -33,6 +33,7 @@ class EmbeddedModule(object):
             except:
                 pass
 
+            self.is_idle = False
             while not self.is_idle:
                 self.step()
 
