@@ -11,10 +11,10 @@ class TemperatureSensor(EmbeddedModule):
 
     def init_module(self):
         super().init_module()
-        self.temperature = self.devices["temperature"].read()
+        self.temperature = self.devices["temperature"]["read"]()
 
     def step(self):
-        self.temperature = self.devices["temperature"].read()
+        self.temperature = self.devices["temperature"]["read"]()
         
         self.send({
             'temperature': self.temperature,
