@@ -42,6 +42,8 @@ class FanControl(EmbeddedModule):
         if not self.loop:
             self.loop = asyncio.get_running_loop()
 
+        print('STATE = ', self.state)
+
         def fan_off():
             self.fan.off()
             if self.button_pressed or (self.temperature >= self.config["FAN_TEMP"]):
