@@ -43,7 +43,7 @@ def register_module(module_name, module):
     modules.append(module)
 
     if module.is_timer:
-        timers.add(module)
+        timers.append(module)
 
 def init_modules():
     for module in modules:
