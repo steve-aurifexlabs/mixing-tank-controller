@@ -21,7 +21,12 @@ class Timer(EmbeddedModule):
         self.time = self.loop.time()
 
     async def tick(self):
+        if not self.loop:
+            self.loop = asyncio.get_running_loop()
+            self.time = self.loop.time()
+            
         print(self.loop.time(), self.time, self.interval)
+        
         if(self.loop.time() - self.time > self.interval):
             self.time = self.loop.time()
             self.loop.create_task(self.send({}))
