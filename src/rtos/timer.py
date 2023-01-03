@@ -16,6 +16,9 @@ class Timer(EmbeddedModule):
     def init_module(self):
         super().init_module()
 
+    def start_task(self):
+        pass
+
     def tick(self):
         if not self.loop:
             self.loop = asyncio.get_running_loop()
