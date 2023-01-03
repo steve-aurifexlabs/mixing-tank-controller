@@ -12,9 +12,9 @@ def get_devices(config):
     devices['fan_button'] = {
         'read': Button(config["buttons"]["fan"]).read
     }
-    devices['alarm_reset_button'] = {
-        'read': Button(config["buttons"]["alarm_reset"]).read
-    }
+    # devices['alarm_reset_button'] = {
+    #     'read': Button(config["buttons"]["alarm_reset"]).read
+    # }
 
     from drivers.periphery.fan import Fan
     devices['fan'] = {
@@ -25,11 +25,11 @@ def get_devices(config):
     devices['warning_led'] = {
         'write': Led(config["leds"]["warning"]).write
     }
-    devices['alarm_led_0'] = {
-        'write': Led(config["leds"]["alarm_0"]).write
-    }
-    devices['alarm_led_1'] = {
-        'write': Led(config["leds"]["alarm_1"]).write
-    }
+    # devices['alarm_led_0'] = {
+    #     'write': Led(config["leds"]["alarm_0"]).write
+    # }
+    # devices['alarm_led_1'] = {
+    #     'write': Led(config["leds"]["alarm_1"]).write
+    # }
 
     return devices
