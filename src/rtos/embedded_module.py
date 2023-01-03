@@ -23,7 +23,7 @@ class EmbeddedModule(object):
             event = await self.queue.get()
             
             # Module properties get automatically set with event data
-            self[self.event_attribute_map[event.event_name]] = event["value"]
+            self[self.event_attribute_map[event["event_name"]]] = event["value"]
 
             while not self.is_idle:
                 self.step()
