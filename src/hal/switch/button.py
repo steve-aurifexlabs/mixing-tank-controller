@@ -6,8 +6,6 @@ from rtos.embedded_module import EmbeddedModule
 
 class Button(EmbeddedModule):
     def __init__(self, config, devices):
-        print(super)
-        print(super())
         super().__init__(config, devices)
         self.value = None
 
