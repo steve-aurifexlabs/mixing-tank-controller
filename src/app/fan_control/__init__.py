@@ -48,7 +48,7 @@ class FanControl(EmbeddedModule):
         def fan_off():
             self.fan.off()
             
-            print(self.button_pressed, self.temperature, self.config["FAN_TEMP"])
+            # print(self.button_pressed, self.temperature, self.config["FAN_TEMP"])
 
             if self.button_pressed or (self.temperature >= self.config["FAN_TEMP"]):
                 self.state = 'FAN_STARTING'

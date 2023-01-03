@@ -25,7 +25,7 @@ class Timer(EmbeddedModule):
             self.loop = asyncio.get_running_loop()
             self.time = self.loop.time()
             
-        print(self, self.loop.time(), self.time, self.interval)
+        # print(self, self.loop.time(), self.time, self.interval)
         
         if(self.loop.time() - self.time > self.interval):
             self.time = self.loop.time()
