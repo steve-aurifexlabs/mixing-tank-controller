@@ -18,7 +18,7 @@
             "unit": "ms"
         },
         "fast": {
-            "period": 500,
+            "period": 50,
             "unit": "ms"
         }
     },
