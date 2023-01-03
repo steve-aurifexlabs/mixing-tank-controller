@@ -63,6 +63,7 @@ def start_event_loop():
             # tickStats.add({})
 
             for timer in timers:
+                print(timer)
                 timer.tick()
 
             # tickStats[-1].cpuTime = loop.time() - startTickTime
