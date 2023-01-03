@@ -19,7 +19,7 @@ class FanControl(EmbeddedModule):
             'fan_button': 'button_pressed',
         }
 
-        self.fan = Fan(self.config.fan, {
+        self.fan = Fan(self["config"]["fan"], {
             'fan': devices['fan'],
         })
 
