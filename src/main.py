@@ -4,6 +4,7 @@
 import asyncio
 import sys
 import json
+from pprint import pprint
 
 import rtos.rtos as rtos
 from rtos.timer import Timer
@@ -71,6 +72,15 @@ def main(args):
 
     # Init modules
     rtos.init_modules()
+
+    print("Modules:")
+    pprint(rtos.modules)
+    print("Devices:")
+    pprint(rtos.devices)
+    print("Timers:")
+    pprint(rtos.timers)
+    print("Event Routes:")
+    pprint(rtos.event_routes)
 
     # Start event loop
     asyncio.run(rtos.start_event_loop())

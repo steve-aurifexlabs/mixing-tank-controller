@@ -26,7 +26,6 @@ def register_module(module_name, module):
         }
 
     def subscribe(event_name):
-        print(event_routes)
         event_routes[event_name]["subscribers"].append(module)
 
     def send(data):
