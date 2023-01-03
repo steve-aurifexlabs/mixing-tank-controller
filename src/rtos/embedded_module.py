@@ -1,6 +1,7 @@
 '''Base Embedded Module'''
 
 
+import json
 from pprint import pprint
 import asyncio
 
@@ -24,7 +25,7 @@ class EmbeddedModule(object):
         while True:
             event = await self.queue.get()
             
-            pprint('Event: ', event)
+            pprint('Event: ', json.dumps(event))
 
             # Module properties get automatically set with event data
             try:
