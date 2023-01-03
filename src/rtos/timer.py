@@ -10,7 +10,7 @@ class Timer(EmbeddedModule):
         self.interval = interval
         self.loop = None
         self.time = None
-        self.isTimer = True
+        self.is_timer = True
 
     def init_module(self):
         super()
