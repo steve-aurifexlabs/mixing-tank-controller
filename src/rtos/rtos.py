@@ -54,10 +54,10 @@ async def start_event_loop():
 
     for module in modules.values():
         if not module.is_timer:
-            asyncio.run(module.start_task())
+            loop.call_soon(module.start_task())
 
     while True:
-        startTickTime = loop.time()
+        # startTickTime = loop.time()
 
         # tickStats.add({})
 
