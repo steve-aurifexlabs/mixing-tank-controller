@@ -34,6 +34,9 @@ class FanControl(EmbeddedModule):
         self.state = 'FAN_OFF'
         self.is_idle = True
 
+        self.temperature = -1000
+        self.button_pressed = False
+
     def step(self):
         pprint(self)
         def fan_off():
