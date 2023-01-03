@@ -1,6 +1,6 @@
 '''Timer'''
 
-
+import asyncio
 from rtos.embedded_module import EmbeddedModule
 
 
@@ -17,6 +17,7 @@ class Timer(EmbeddedModule):
         super().init_module()
 
     def start_task(self):
+        self.loop = asyncio.get_running_loop()
         self.time = self.loop.time()
 
     def tick(self):
