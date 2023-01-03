@@ -7,7 +7,7 @@ from periphery import GPIO
 class GpioIn(object):
     def __init__(self, config):
         self.config = config
-        self.device = GPIO(config.chip, config.line, 'in')
+        self.device = GPIO('/dev/gpiochip' + config["chip"], config["line"], 'in')
 
     def read(self):
         return self.device.read()
@@ -15,7 +15,7 @@ class GpioIn(object):
 class GpioOut(object):
     def __init__(self, config):
         self.config = config
-        self.device = GPIO(config.chip, config.line, 'out')
+        self.device = GPIO('/dev/gpiochip' + config["chip"], config["line"], 'out')
 
     def write(self, value):
         self.device.write(value)
