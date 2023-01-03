@@ -40,7 +40,7 @@ def register_module(module_name, module):
     module.subscribe = subscribe
     module.send = send
     
-    modules.add(module)
+    modules.append(module)
 
     if module.is_timer:
         timers.add(module)
