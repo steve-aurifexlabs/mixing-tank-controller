@@ -76,7 +76,7 @@ def main(args):
     print("Modules:")
     pprint(rtos.modules)
     print("Devices:")
-    pprint(rtos.devices)
+    pprint(devices)
     print("Timers:")
     pprint(rtos.timers)
     print("Event Routes:")
