@@ -20,11 +20,8 @@ class Timer(EmbeddedModule):
         self.loop = asyncio.get_running_loop()
         self.time = self.loop.time()
 
-    def tick(self):
-        if not self.loop:
-            self.loop = asyncio.get_running_loop()
-            self.time = self.loop.time()
-    
+    async def tick(self):
+        print(self.loop.time(), self.time, self.interval)
         if(self.loop.time() - self.time > self.interval):
             self.time = self.loop.time()
-            self.send({})
+            await self.send({})

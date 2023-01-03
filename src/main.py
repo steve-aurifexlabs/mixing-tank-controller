@@ -73,6 +73,7 @@ def main(args):
     # Init modules
     rtos.init_modules()
 
+    # Print everything before the event loop starts
     print("\nModules:")
     pprint(rtos.modules)
     print("\nDevices:")
