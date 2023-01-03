@@ -12,7 +12,7 @@ class RingBuffer(object):
         self.buffer = []
 
     def add(self, obj):
-        self.buffer.add(obj)
+        self.buffer.append(obj)
         if(self.buffer.length > self.max_length):
             self.buffer.pop(0)
 
