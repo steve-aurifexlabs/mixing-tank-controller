@@ -26,14 +26,14 @@ def main(args):
     devices = get_devices(config)
 
     # Register modules
-    rtos.register_module('slow_timer', Timer(config.timers.slow.period))
-    rtos.register_module('fast_timer', Timer(config.timers.fast.period))
+    rtos.register_module('slow_timer', Timer(config["timers"]["slow"]["period"]))
+    rtos.register_module('fast_timer', Timer(config["timers"]["fast"]["period"]))
     
-    rtos.register_module('temperature_sensor', TemperatureSensor(config.sensors.cpu_temperature, {
+    rtos.register_module('temperature_sensor', TemperatureSensor(config["sensors"]["cpu_temperature"], {
         'temperature': devices['temperature_sensor'],
     }))
 
-    rtos.register_module('fan_button', Button(config.buttons.fan_button, {
+    rtos.register_module('fan_button', Button(config["buttons"]["fan_button"], {
         'button': devices['fan_button'],
     }))
 
@@ -41,7 +41,7 @@ def main(args):
     #     'button': devices['alarm_reset_button'],
     # }))
     
-    rtos.register_module('fan_control', FanControl(config.fan_control, {
+    rtos.register_module('fan_control', FanControl(config["fan_control"], {
         'fan': devices['fan'],
     }))
     
