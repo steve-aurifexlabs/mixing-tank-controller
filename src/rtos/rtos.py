@@ -57,6 +57,8 @@ def start_event_loop():
             asyncio.run(module.start_task())
 
     async def start_scheduler():
+        print('\n---Start Scheduler---\n')
+        
         while True:
             # startTickTime = loop.time()
 
