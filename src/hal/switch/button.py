@@ -11,10 +11,10 @@ class Button(EmbeddedModule):
 
     def init_module(self):
         super().init_module()
-        self.value = self.devices["button"].read()
+        self.value = self.devices["button"]["read"]()
 
     def step(self):
-        self.value = self.devices["button"].read()
+        self.value = self.devices["button"]["read"]()
         
         self.send({
             'value': self.value,
