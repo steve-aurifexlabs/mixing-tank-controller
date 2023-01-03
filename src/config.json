@@ -1,6 +1,6 @@
 {
     "fan_control": {
-        "FAN_TEMP": 55,
+        "FAN_TEMP": 60,
         "FAN_START_TIME": 5,
         "FAN_STOP_TIME": 5,
         "fan": {}
