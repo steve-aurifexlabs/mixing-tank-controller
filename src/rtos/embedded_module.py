@@ -15,9 +15,6 @@ class EmbeddedModule(object):
     def init_module(self):
         pass
 
-    def send():
-        
-
     async def start_task(self):
         self.queue = asyncio.Queue()
         self.loop = asyncio.get_running_loop()
