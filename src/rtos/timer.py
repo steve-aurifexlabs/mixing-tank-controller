@@ -15,7 +15,7 @@ class Timer(EmbeddedModule):
 
     def init_module(self):
         super().init_module()
-        self.time = self.loop.time()
+        self.time = -1000
 
     def tick(self):
         if(self.loop.time() - self.time > self.interval):

@@ -14,9 +14,10 @@ class EmbeddedModule(object):
 
     def init_module(self):
         self.queue = asyncio.Queue()
-        self.loop = asyncio.get_running_loop()
 
     async def start_task(self):
+        self.loop = asyncio.get_running_loop()
+        
         while True:
             event = await self.queue.get()
             
