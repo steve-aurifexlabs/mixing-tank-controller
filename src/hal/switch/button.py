@@ -1,6 +1,10 @@
+'''Button module'''
 
 
-class Button(object):
+from rtos.embedded_module import EmbeddedModule
+
+
+class Button(EmbeddedModule):
     def __init__(self, config, devices):
         print(super)
         print(super())
