@@ -4,7 +4,7 @@
 import asyncio
 import gc
 
-from ring_buffer import RingBuffer
+from rtos.ring_buffer import RingBuffer
 
 
 modules = []
