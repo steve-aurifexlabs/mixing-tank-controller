@@ -6,12 +6,15 @@ from rtos.embedded_module import EmbeddedModule
 
 class TemperatureSensor(EmbeddedModule):
     def __init__(self, config, devices):
+        super(config, devices)
+        
         self.config = config
         self.devices = devices
 
         self.temperature = None
 
     def init_module(self):
+        super()
         self.temperature = self.devices["temperature"].read()
 
     def step(self):
