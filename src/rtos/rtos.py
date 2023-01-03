@@ -12,7 +12,7 @@ timers = []
 devices = {}
 event_routes = {}
 
-tickStats = RingBuffer(1000)
+# tickStats = RingBuffer(1000)
 
 
 def register_module(module_name, module):
@@ -60,15 +60,15 @@ async def start_event_loop():
     while True:
         startTickTime = loop.time()
 
-        tickStats.add({})
+        # tickStats.add({})
 
         for timer in timers:
             timer.tick()
 
-        tickStats[-1].cpuTime = loop.time() - startTickTime
+        # tickStats[-1].cpuTime = loop.time() - startTickTime
 
         gc.collect(0)
 
-        tickStats[-1].gcTime = loop.time() - startTickTime - tickStats.cpuTime
+        # tickStats[-1].gcTime = loop.time() - startTickTime - tickStats.cpuTime
         
         await asyncio.sleep(1)
