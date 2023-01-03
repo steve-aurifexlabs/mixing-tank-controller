@@ -71,4 +71,4 @@ async def start_event_loop():
 
         # tickStats[-1].gcTime = loop.time() - startTickTime - tickStats.cpuTime
         
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.010)
