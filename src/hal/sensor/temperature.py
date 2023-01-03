@@ -1,6 +1,10 @@
+'''Temperature sensor module'''
 
 
-class TemperatureSensor(object):
+from rtos.embedded_module import EmbeddedModule
+
+
+class TemperatureSensor(EmbeddedModule):
     def __init__(self, config, devices):
         self.config = config
         self.devices = devices

@@ -10,6 +10,7 @@ class EmbeddedModule(object):
         self.devices = devices
         self.state = None
         self.event_attribute_map = {}
+        self.is_timer = False
 
     def init_module(self):
         self.queue = asyncio.Queue()
