@@ -42,7 +42,7 @@ class FanControl(EmbeddedModule):
         if not self.loop:
             self.loop = asyncio.get_running_loop()
 
-        print('STATE = ', self.state)
+        print('STATE = ', self.state, '\n\n')
 
         def fan_off():
             self.fan.off()
