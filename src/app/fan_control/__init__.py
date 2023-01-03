@@ -1,6 +1,8 @@
 '''Fan Control Module'''
 
 
+from pprint import pprint
+
 from rtos.embedded_module import EmbeddedModule
 from hal.actuator.fan import Fan
 
@@ -30,6 +32,7 @@ class FanControl(EmbeddedModule):
         self.is_idle = True
 
     def step(self):
+        pprint(self)
         def fan_off():
             self.fan.write(False)
             if self.button_pressed or (self.temperature >= self.config.FAN_TEMP):
