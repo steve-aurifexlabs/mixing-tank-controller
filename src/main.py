@@ -18,9 +18,7 @@ def main(args):
     # Load config
     with open('./config.json') as file:
         config = json.load(file)
-
-
-    print(config)
+    # print(config)
 
     # Load device drivers
     devices = get_devices(config)

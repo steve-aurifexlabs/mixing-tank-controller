@@ -7,7 +7,6 @@ from periphery import GPIO
 class GpioIn(object):
     def __init__(self, config):
         self.config = config
-        print(config)
         self.device = GPIO('/dev/gpiochip' + config["chip"], config["line"], 'in')
 
     def read(self):

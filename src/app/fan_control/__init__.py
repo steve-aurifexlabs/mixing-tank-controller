@@ -7,7 +7,7 @@ from hal.actuator.fan import Fan
 
 class FanControl(EmbeddedModule):
     def __init__(self, config, devices):
-        super(config, devices)
+        super().__init__(config, devices)
 
         self.state = None
         self.is_idle = None
@@ -24,7 +24,8 @@ class FanControl(EmbeddedModule):
         })
 
     def init_module(self):
-        super()
+        super().init_module()
+        
         self.state = 'FAN_OFF'
         self.is_idle = True
 
