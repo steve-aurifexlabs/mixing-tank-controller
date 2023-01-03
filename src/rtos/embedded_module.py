@@ -11,6 +11,7 @@ class EmbeddedModule(object):
         self.state = None
         self.event_attribute_map = {}
         self.is_timer = False
+        self.is_idle = True
 
     def init_module(self):
         pass
