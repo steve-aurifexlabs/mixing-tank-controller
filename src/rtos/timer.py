@@ -1,9 +1,7 @@
 '''Timer'''
 
 
-import asyncio
-
-from embedded_module import EmbeddedModule
+from rtos.embedded_module import EmbeddedModule
 
 
 class Timer(EmbeddedModule):
