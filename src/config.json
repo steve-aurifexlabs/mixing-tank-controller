@@ -14,11 +14,11 @@
 
     "timers": {
         "slow": {
-            "period": 1000,
+            "period": 100,
             "unit": "ms"
         },
         "fast": {
-            "period": 10,
+            "period": 100,
             "unit": "ms"
         }
     },
