@@ -37,6 +37,7 @@ class FanControl(EmbeddedModule):
 
         self.temperature = -1000
         self.button_pressed = False
+        self.fan_timer = -1000
 
     async def step(self):
         if not self.loop:
@@ -51,6 +52,7 @@ class FanControl(EmbeddedModule):
 
             if self.button_pressed or (self.temperature >= self.config["FAN_TEMP"]):
                 self.state = 'FAN_STARTING'
+                self.fan_timer = self.loop.time()
             else:
                 self.is_idle = True
 
@@ -65,6 +67,7 @@ class FanControl(EmbeddedModule):
             self.fan.on()
             if self.button_pressed and (self.temperature < self.config["FAN_TEMP"]):
                 self.state = 'FAN_STOPPING'
+                self.fan_timer = self.loop.time()
             else:
                 self.is_idle = True
 
