@@ -13,7 +13,7 @@ class RingBuffer(object):
 
     def add(self, obj):
         self.buffer.append(obj)
-        if(self.buffer.length > self.max_length):
+        if(len(self.buffer) > self.max_length):
             self.buffer.pop(0)
 
     def __repr__(self):
