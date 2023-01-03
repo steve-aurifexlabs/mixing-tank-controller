@@ -28,10 +28,10 @@ def register_module(module_name, module):
     def subscribe(event_name):
         event_routes[event_name]["subscribers"].append(module)
 
-    def send(data):
+    async def send(data):
         subscribers = event_routes[module.published_event]["subscribers"]
         for subscriber in subscribers:
-            subscriber.queue.put({
+            await subscriber.queue.put({
                 'event_name': module.published_event,
                 'value': data,
             })
