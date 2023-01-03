@@ -38,30 +38,30 @@ class FanControl(EmbeddedModule):
         pprint(self)
         def fan_off():
             self.fan.off()
-            if self.button_pressed or (self.temperature >= self.config.FAN_TEMP):
+            if self.button_pressed or (self.temperature >= self.config["FAN_TEMP"]):
                 self.state = 'FAN_STARTING'
             else:
                 self.is_idle = True
 
         def fan_starting():
             self.fan.on()
-            if self.loop.time() - self.fan_timer > self.config.FAN_START_TIME:
+            if self.loop.time() - self.fan_timer > self.config["FAN_START_TIME"]:
                 self.state = 'FAN_ON'
             else:
                 self.is_idle = True
 
         def fan_on():
             self.fan.on()
-            if self.button_pressed and (self.temperature < self.config.FAN_TEMP):
+            if self.button_pressed and (self.temperature < self.config["FAN_TEMP"]):
                 self.state = 'FAN_STOPPING'
             else:
                 self.is_idle = True
 
         def fan_stopping():
             self.fan.off()
-            if self.temperature >= self.config.FAN_TEMP:
+            if self.temperature >= self.config["FAN_TEMP"]:
                 self.state = 'FAN_STARTING'
-            elif self.loop.time() - self.fan_timer > self.config.FAN_START_TIME:
+            elif self.loop.time() - self.fan_timer > self.config["FAN_START_TIME"]:
                 self.state = 'FAN_OFF'
             else:
                 self.is_idle = True
