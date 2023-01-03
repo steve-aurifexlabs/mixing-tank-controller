@@ -14,9 +14,12 @@ class FanControl(EmbeddedModule):
         self.state = None
         self.is_idle = None
 
+        self.temperature = None
+        self.button_pressed = None
+
         # Maps event names to module properties
         self.event_attribute_map = {
-            'slow_clock': 'slow_clock',
+            #'slow_clock': 'slow_clock',
             'temperature': 'temperature',
             'fan_button': 'button_pressed',
         }
