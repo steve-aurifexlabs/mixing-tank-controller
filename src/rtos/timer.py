@@ -8,7 +8,7 @@ class Timer(EmbeddedModule):
     def __init__(self, interval):
         super().__init__({}, {})
         
-        self.interval = interval
+        self.interval = interval / 1000.0
         self.loop = None
         self.time = None
         self.is_timer = True
